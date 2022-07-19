@@ -1,6 +1,5 @@
 {
   "name": "vue3-status-indicator",
-  "private": true,
   "version": "1.0.0",
   "author": "guxuerui",
   "description": "vue3 status indicator",
