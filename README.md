@@ -5,9 +5,9 @@
 ## 安装
 ```sh
 # Install with pnpm
-$ pnpm i -S vue3-status-indicator
+$ pnpm i vue3-status-indicator
 # or npm
-$ npm i -S vue3-status-indicator
+$ npm i vue3-status-indicator
 ```
 ## 使用
 
@@ -16,33 +16,24 @@ $ npm i -S vue3-status-indicator
 ```ts
 // 在.vue文件中
 <script setup lang="ts">
-  import { Vue3StatusIndicator } from 'vue3-status-indicator';
+  import { Vue3StatusIndicator } from 'vue3-status-indicator'
+  import 'vue3-status-indicator/dist/style.css'
 </script>
-```
-- 使用**全局导入**:
-```ts
-// 在main.ts中
-import Vue3StatusIndicator from 'vue3-status-indicator';
-app.use(Vue3StatusIndicator);
-
-// 按需引入
-import { Vue3StatusIndicator } from 'vue3-status-indicator';
-app.component('custom-name', Vue3StatusIndicator);
 ```
 ### 2. 使用方式
 - 方式一: 传入具体的色值
 ```html
-primary: <Vue3StatusIndicator bg-color="#326CD6" class="mx-2"/>
-success: <Vue3StatusIndicator bg-color="#4FAD59" class="mx-2"/>
-error:   <Vue3StatusIndicator bg-color="#e4393c" class="mx-2"/>
-warning: <Vue3StatusIndicator bg-color="orange" class="mx-2"/>
+primary: <Vue3StatusIndicator bg-color="#326CD6" />
+success: <Vue3StatusIndicator bg-color="#4FAD59" />
+error:   <Vue3StatusIndicator bg-color="#e4393c" />
+warning: <Vue3StatusIndicator bg-color="orange" />
 ```
 - 方式二: 使用默认的type
 ```html
-primary: <Vue3StatusIndicator type="primary" class="mx-2"/>
-success: <Vue3StatusIndicator type="success" class="mx-2"/>
-error:   <Vue3StatusIndicator type="error" class="mx-2"/>
-warning: <Vue3StatusIndicator type="warning" class="mx-2"/>
+primary: <Vue3StatusIndicator type="primary" />
+success: <Vue3StatusIndicator type="success" />
+error:   <Vue3StatusIndicator type="error" />
+warning: <Vue3StatusIndicator type="warning" />
 ```
 
 > Tips: 不建议两种方式同时使用, 否则会以传入的type为准

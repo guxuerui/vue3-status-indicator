@@ -37,7 +37,7 @@ watchEffect(() => {
   <span class="indicator" />
 </template>
 
-<style scoped>
+<style>
   .indicator {
     display: inline-block;
     width: 16px;
