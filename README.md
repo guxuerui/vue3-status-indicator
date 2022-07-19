@@ -1,16 +1,60 @@
-# Vue 3 + TypeScript + Vite
+# [vue3-status-indicator](https://github.com/guxuerui/vue3-status-indicator)
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+这是一个Vue3版本的状态指示灯组件, 受项目[vue-status-indicator](https://github.com/coderdiaz/vue-status-indicator#readme) 的启发，使用`vue3 + Ts + vite`
 
-## Recommended IDE Setup
+## 安装
+```sh
+# Install with pnpm
+$ pnpm i -S vue3-status-indicator
+# or npm
+$ npm i -S vue3-status-indicator
+```
+## 使用
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+### 1. 导入
+- 使用**局部导入**:
+```ts
+// 在.vue文件中
+<script setup lang="ts">
+  import { Vue3StatusIndicator } from 'vue3-status-indicator';
+</script>
+```
+- 使用**全局导入**:
+```ts
+// 在main.ts中
+import Vue3StatusIndicator from 'vue3-status-indicator';
+app.use(Vue3StatusIndicator);
 
-## Type Support For `.vue` Imports in TS
+// 按需引入
+import { Vue3StatusIndicator } from 'vue3-status-indicator';
+app.component('custom-name', Vue3StatusIndicator);
+```
+### 2. 使用方式
+- 方式一: 传入具体的色值
+```html
+primary: <Vue3StatusIndicator bg-color="#326CD6" class="mx-2"/>
+success: <Vue3StatusIndicator bg-color="#4FAD59" class="mx-2"/>
+error:   <Vue3StatusIndicator bg-color="#e4393c" class="mx-2"/>
+warning: <Vue3StatusIndicator bg-color="orange" class="mx-2"/>
+```
+- 方式二: 使用默认的type
+```html
+primary: <Vue3StatusIndicator type="primary" class="mx-2"/>
+success: <Vue3StatusIndicator type="success" class="mx-2"/>
+error:   <Vue3StatusIndicator type="error" class="mx-2"/>
+warning: <Vue3StatusIndicator type="warning" class="mx-2"/>
+```
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's Take Over mode by following these steps:
+> Tips: 不建议两种方式同时使用, 否则会以传入的type为准
 
-1. Run `Extensions: Show Built-in Extensions` from VS Code's command palette, look for `TypeScript and JavaScript Language Features`, then right click and select `Disable (Workspace)`. By default, Take Over mode will enable itself if the default TypeScript extension is disabled.
-2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
+### 兼容性
+支持最新版本的 `Chrome/Firefox/Safari`
 
-You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+### 属性/Props
+|名称|描述|类型|默认|是否必须|
+|---|---|---|---|---|
+|type|默认提供的类型|String|""|false|
+|bgColor|自定义色值|String|#326CD6|false|
+
+## License
+[MIT license](https://github.com/guxuerui/vue3-status-indicator/blob/main/LICENSE)
