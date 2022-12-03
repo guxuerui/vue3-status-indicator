@@ -1,12 +1,9 @@
-import Vue3StatusIndicator from "./components/statusIndicator.vue"; // 引入封装好的组件
+import Vue3StatusIndicator from './components/statusIndicator.vue' // 引入封装好的组件
 
-export { Vue3StatusIndicator } //实现按需引入*
+export default {
+  install: (app: any, options: any): void => {
+    app.component('Vue3StatusIndicator', Vue3StatusIndicator)
+  },
+}
 
-
-const components = [Vue3StatusIndicator];
-const install = function(App: any, options?: any) {
-	components.forEach((component) => {
-		App.component(component.name,component);
-	});
-};
-export default { install }
+export { Vue3StatusIndicator }

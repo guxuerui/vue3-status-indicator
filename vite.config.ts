@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'Vue3StatusIndicator',
+      name: 'vue3-status-indicator',
       fileName: (format) => `vue3-status-indicator.${format}.ts`
     },
     rollupOptions: {
