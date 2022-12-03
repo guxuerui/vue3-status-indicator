@@ -78,6 +78,14 @@ primary: <vue3-status-indicator type="primary" :pause="true" />
 |bgColor|自定义色值|String|#326CD6|false|
 |pause|是否停止呼吸动画|Boolean|false|false|
 
+## 类型报错
+
+如果引入组件后报类型错误，可以在 `shims.d.ts` 文件中加上类型声明(或其他 `.d.ts` 文件)
+
+```ts
+declare module 'vue3-status-indicator'
+```
+
 ## License
 
 [MIT license](https://github.com/guxuerui/vue3-status-indicator/blob/main/LICENSE)
