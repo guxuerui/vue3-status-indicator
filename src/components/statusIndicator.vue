@@ -15,6 +15,11 @@ const props = defineProps({
     requird: false,
     default: '#326cd6',
   },
+  pause: {
+    type: Boolean,
+    requird: false,
+    default: false,
+  },
 })
 // define the default state type
 const typeMap = ref<TypeMap>({
@@ -34,7 +39,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <span class="indicator" />
+  <span class="indicator" :class="pause ? '' : 'active'" />
 </template>
 
 <style>
@@ -44,6 +49,8 @@ watchEffect(() => {
     height: 16px;
     border-radius: 50%;
     background-color: v-bind('indicatorColor');
+  }
+  .active {
     animation: indicator 2s ease-in-out infinite;
   }
   @keyframes indicator {

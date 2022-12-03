@@ -60,6 +60,8 @@ success: <Vue3StatusIndicator type="success" />
 error:   <Vue3StatusIndicator type="error" />
 warning: <Vue3StatusIndicator type="warning" />
 primary: <vue3-status-indicator type="primary" />
+<!-- 停止呼吸动画, 设置pause属性为true -->
+primary: <vue3-status-indicator type="primary" :pause="true" />
 ```
 
 > Tips: 不建议两种方式同时使用, 否则会以传入的type为准
@@ -74,6 +76,7 @@ primary: <vue3-status-indicator type="primary" />
 |---|---|---|---|---|
 |type|默认提供的类型|String|""|false|
 |bgColor|自定义色值|String|#326CD6|false|
+|pause|是否停止呼吸动画|Boolean|false|false|
 
 ## License
 
